@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from utils.upload import upload_file
 """
 函数 include() 允许引用其它 URLconfs。每当 Django 遇到 include() 时，它会截断与此项匹配的 URL 的部分，
 并将剩余的字符串发送到 URLconf 以供进一步处理。既可以实现即插即用的效果，可以放在你自己想要的任何路径下。
@@ -26,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),  # 这里使用include()引入users.urls文件
     path('', include('blog.urls')),         # 引入blog的url
+    path('uploads/', upload_file, name='uploads')   # 上传图片url
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
