@@ -39,7 +39,7 @@ def send_register_email(email, send_type='register'):
         email_title = '博客的注册激活链接'
         email_body = '请点击下面链接激活你的账号：http://upclzj.work:8080/users/active/{0}'.format(code)
 
-        send_status = send_mail(email_title, email_body, '1079011291@qq.com', [email])
+        send_status = send_mail(email_title, email_body, '111291@qq.com', [email])
         if send_status:
             pass
 
@@ -47,6 +47,6 @@ def send_register_email(email, send_type='register'):
         email_title = '博客密码重置链接'
         email_body = '请点击以下链接修改密码：http://upclzj.work:8080/users/forget_pwd_url/{0}'.format(code)
 
-        send_status = send_mail(email_title, email_body, '1079011291@qq.com', [email])
+        send_status = send_mail(email_title, email_body, '011291@qq.com', [email])
         if send_status:
             pass
